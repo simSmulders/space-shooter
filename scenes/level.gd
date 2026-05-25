@@ -28,6 +28,15 @@ func _ready() -> void:
 		# speed
 		star.speed_scale = rng.randf_range(0.6, 1.4)
 		
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("pause"):
+		toggle_pause()
+		get_tree().root.set_input_as_handled()
+
+func toggle_pause():
+	get_tree().call_deferred('change_scene_to_file', "res://scenes/pause_screen.tscn")
+	get_tree().paused = !get_tree().paused
+	print("Game paused: ", get_tree().paused)
 
 func _on_meteor_timer_timeout() -> void:
 	# 2. create an instance

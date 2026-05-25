@@ -213,6 +213,7 @@ size = Vector2(155, 720)
 size = Vector2(1593.375, 127.875)
 
 [node name="Level" type="Node2D" unique_id=1752944389]
+process_mode = 1
 script = ExtResource("1_ppgk2")
 
 [node name="BG" type="Sprite2D" parent="." unique_id=721779920]
