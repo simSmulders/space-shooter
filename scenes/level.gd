@@ -34,9 +34,19 @@ func _input(event: InputEvent) -> void:
 		get_tree().root.set_input_as_handled()
 
 func toggle_pause():
-	get_tree().call_deferred('change_scene_to_file', "res://scenes/pause_screen.tscn")
 	get_tree().paused = !get_tree().paused
-	print("Game paused: ", get_tree().paused)
+	
+	# Show/hide pause menu
+	if get_tree().paused:
+		# Show pause menu (instantiate as child)
+		var pause_menu = load("res://scenes/pause_screen.tscn").instantiate()
+		add_child(pause_menu)
+	else:
+		# Hide pause menu (find and remove it)
+		var pause_menu = find_child("PauseScreen")  # or however you name it
+		print(pause_menu)
+		if pause_menu:
+			pause_menu.queue_free()
 
 func _on_meteor_timer_timeout() -> void:
 	# 2. create an instance
