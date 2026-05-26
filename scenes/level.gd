@@ -38,13 +38,10 @@ func toggle_pause():
 	
 	# Show/hide pause menu
 	if get_tree().paused:
-		# Show pause menu (instantiate as child)
 		var pause_menu = load("res://scenes/pause_screen.tscn").instantiate()
-		add_child(pause_menu)
+		add_child(pause_menu)  # This should work fine with CanvasLayer now
 	else:
-		# Hide pause menu (find and remove it)
-		var pause_menu = find_child("PauseScreen")  # or however you name it
-		print(pause_menu)
+		var pause_menu = find_child("PauseScreen")
 		if pause_menu:
 			pause_menu.queue_free()
 
