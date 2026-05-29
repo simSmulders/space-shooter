@@ -60,6 +60,7 @@ func _on_meteor_collision():
 	get_tree().call_group('ui', 'set_health', health)
 	$Player.on_collision_sound()
 	if health <= 0:
+		Global.save_high_score(Global.score)
 		get_tree().call_deferred('change_scene_to_file', "res://scenes/game_over.tscn")
 
 func _on_player_laser(pos) -> void:
