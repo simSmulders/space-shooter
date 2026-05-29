@@ -48,6 +48,18 @@ theme_override_fonts/font = ExtResource("1_xeevv")
 theme_override_font_sizes/font_size = 30
 text = "SCORE "
 
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/VBoxContainer" unique_id=1456656167]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 50
+
+[node name="Label3" type="Label" parent="CenterContainer/VBoxContainer/MarginContainer" unique_id=162257611]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_xeevv")
+theme_override_font_sizes/font_size = 26
+text = "HIGH SCORE "
+
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=541325961]
 layout_mode = 1
 anchors_preset = 7
